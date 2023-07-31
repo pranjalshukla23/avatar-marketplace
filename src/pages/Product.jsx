@@ -41,15 +41,15 @@ function Product() {
   }
 
   return (
-    <div className='h-screen flex justify-center items-center gap-8 '>
+    <div className='flex flex-col lg:flex-row items-center justify-center items-center gap-8 '>
       {/* slideshow container */}
-      <div className='slideshow h-full w-1/3 flex items-center justify-center'>
-        <div className=' flex items-center gap-4  h-4/5'>
-          <div className='flex flex-col gap-4'>
+      <div className='slideshow h-full w-full lg:w-1/3 flex flex-col lg:flex-row items-center justify-center '>
+        <div className=' flex flex-col-reverse lg:flex-row items-center justify-center  gap-4  h-4/5 '>
+          <div className='flex flex-row lg:flex-col gap-4'>
             {product &&
               product.images.map((image, index) => (
                 <div
-                  className='w-24 hover:brightness-50 cursor-pointer'
+                  className='w-12 lg:w-24 hover:brightness-50 cursor-pointer'
                   key={index}
                   onClick={() => setPicture(image)}
                 >
@@ -65,14 +65,14 @@ function Product() {
           </div>
 
           {picture && (
-            <div className='picture h-full '>
+            <div className='picture h-full w-3/4'>
               <img src={picture} alt='pictute' className='h-full rounded-md' />
             </div>
           )}
         </div>
       </div>
 
-      <div className=' h-full w-1/2 flex flex-col justify-center'>
+      <div className=' h-full w-full lg:w-1/2 flex flex-col justify-center'>
         {/* details section */}
         <div className=' flex flex-col justify-between gap-4  h-4/5 p-2 font-extrabold'>
           {/* info */}
@@ -97,14 +97,14 @@ function Product() {
           </div>
 
           {/* buttons */}
-          <div className='buttons'>
+          <div className='buttons flex flex-row'>
             <button
-              className='bg-blue-500 p-4 text-white rounded-md mx-4 hover:bg-blue-800'
+              className='bg-blue-500 px-2 py-2 text-white rounded-md mx-4 hover:bg-blue-800'
               onClick={incrementCount}
             >
               Add To Cart
             </button>
-            <button className='bg-blue-500 p-4 text-white hover:bg-blue-800 rounded-md'>
+            <button className='bg-blue-500 px-2 py-2 text-white hover:bg-blue-800 rounded-md'>
               Buy Now
             </button>
           </div>

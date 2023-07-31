@@ -2,7 +2,7 @@ import React from "react";
 
 function Sidebar() {
   return (
-    <div className=' w-64 font-Inter pl-3 py-3 pr-4 text-xs'>
+    <div className=' w-64 font-Inter pl-3 py-3 pr-4 text-xs hidden'>
       {/* category */}
       <div className='menu-item'>
         <span className='font-bold'>category</span>
